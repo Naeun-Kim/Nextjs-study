@@ -6,11 +6,17 @@ type Props = {
     }
 }
 
+export function generateMetadata({params}: Props) {
+    return {
+        title: params.slug
+    }
+}
+
 export default function Pants({params}: Props) {
     if (params.slug === 'nothing') {
         notFound();
     }
-    return <h1>{params.slug} 제품 설명 페이지</h1>
+    return  <h1>{params.slug} 제품 설명 페이지</h1>
 }
 
 export function generateStaticParams() {

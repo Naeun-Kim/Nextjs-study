@@ -1,4 +1,11 @@
 import styles from '@/app/layout.module.css'
+import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: '멋진 제품 쇼핑몰 | 전체 상품',
+    description: '전체 상품 리스트',
+}
 
 export default function ProductLayout({
   children,
@@ -8,8 +15,8 @@ export default function ProductLayout({
   return (
     <div className={styles.products}>
         <nav>
-            <a href="">여성옷</a>
-            <a href="">남성옷</a>
+            <Link href="/products/women">여성옷</Link>
+            <Link href="/products/man">남성옷</Link>
         </nav>
         <section>
             {children}
